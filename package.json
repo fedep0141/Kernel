@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/fedep0141/Kernel#readme",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "discord.js": "^12.5.1",
-    "fs": "0.0.1-security"
+    "fs": "0.0.1-security",
+    "request": "^2.88.2"
   }
 }
