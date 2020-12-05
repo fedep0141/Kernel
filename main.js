@@ -51,7 +51,7 @@ client.on("message", message => {
         case "choose":
             client.commands.get("choose").execute(message, args);
             const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
-            var bean = message.guild.emojis.cache.find(emoji => emoji.id == '784825909105524749').toString();
+            var bean = message.guild.emojis.cache.find(emoji => emoji.id == 'li').toString();
     
             const embed = new Discord.MessageEmbed()
 .setTitle("RULES")
