@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/fedep0141/Kernel/issues"
   },
-  "homepage": "https://github.com/fedep0141/Kernel#readme"
+  "homepage": "https://github.com/fedep0141/Kernel#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
 }
