@@ -51,15 +51,17 @@ client.on("message", message => {
         case "choose":
             client.commands.get("choose").execute(message, args);
             const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
-            const bru = message.guild.members.cache.find(member => member.id == "325676665009340436");
             const li = message.guild.emojis.cache.find(emoji => emoji.name == 'li').toString();
     
             const embed = new Discord.MessageEmbed()
             .setTitle("RULES")
             .setColor("#ffb400")
-            .setDescription(`Follow the rules or **PEW PEW PEW**\n\n\n ${li} @Bru and @Pyguz. are the **OWNERS** \n -consider them as gods\n\n \:li: If you want to joke that's fine but **stop** means **stops**`)
-            .addField("<@325676665009340436>", "@Bru and @Pyguz")
-            .addField()
+            .setDescription("Follow the rules or you will get **spanked**")
+            .addField("<@!325676665009340436> and <@!484387014725206016> are the **OWNERS**", li + " consider them as gods")
+            .addField("Jokes", li + " if you want to joke that's fine but **stop** means **stop**")
+            .addField("Channels", li + " use the channels for their correct purpose")
+            .addField("Spam", li + " just don't do it, noone cares about your TikTok profile")
+            .addField("Chill dude", li + " don't take everything too seriusly. Except for the rules you dumbass")
             .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
             channel.send(embed);
             return;
