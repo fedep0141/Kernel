@@ -13,7 +13,7 @@ client.on("ready", () => {
     console.log("KernelBot is online");
     // const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
     
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
     .setTitle("RULES")
     .setURL("https://pngimg.com/uploads/shrek/shrek_PNG3.png")
     .setColor("#ffb400")
