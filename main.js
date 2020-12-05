@@ -57,7 +57,7 @@ client.on("message", message => {
             .setTitle("RULES")
             .setColor("#ffb400")
             .setDescription("Follow the rules or you will get **spanked**")
-            .addField('<@!325676665009340436> and <@!484387014725206016> are the **OWNERS**', li + " consider them as gods")
+            .addField("Bru and Pyguz. are the **OWNERS**", li + " consider them as gods")
             .addField("Jokes", li + " if you want to joke that's fine but **stop** means **stop**")
             .addField("Channels", li + " use the channels for their correct purpose")
             .addField("Spam", li + " just don't do it, noone cares about your TikTok profile")
