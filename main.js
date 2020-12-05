@@ -47,6 +47,10 @@ client.on("message", message => {
         case "scarponi":
             client.commands.get("scarponi").execute(message);
             break;
+
+        case "choose":
+            client.commands.get("choose").execute(message, args);
+            break
     }
 
     if(message.channel.name != MODCHANNEL) {
