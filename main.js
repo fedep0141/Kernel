@@ -51,12 +51,13 @@ client.on("message", message => {
         case "choose":
             client.commands.get("choose").execute(message, args);
             const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
+            var bean = message.guild.emojis.find(emoji => emoji.name == 'li');
     
             const embed = new Discord.MessageEmbed()
 .setTitle("RULES")
 .setURL("https://pngimg.com/uploads/shrek/shrek_PNG3.png")
 .setColor("#ffb400")
-.setDescription("Follow the rules or **PEW PEW PEW**\n\n\n :li: @Bru and @Pyguz. are the **OWNERS** \n -consider them as gods\n\n :li: If you want to joke that's fine but **stop** means **stops**")
+.setDescription(bean + "Follow the rules or **PEW PEW PEW**\n\n\n \:li <:li:> @Bru and @Pyguz. are the **OWNERS** \n -consider them as gods\n\n \:li: If you want to joke that's fine but **stop** means **stops**" + bean.id)
 .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
             channel.send(embed);
             return;
