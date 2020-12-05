@@ -4,7 +4,7 @@ module.exports = {
     name: "help",
     description: "Aiuto con i comandi",
     whatDo: "Help with commands",
-    modOnly = false,
+    modOnly: false,
     execute(message, prefix, commands) {
       
       let embed = new Discord.MessageEmbed()

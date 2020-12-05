@@ -2,7 +2,7 @@ module.exports = {
     name: "ping",
     description: "Ping command",
     whatDo: "Ping the bot",
-    modOnly = true,
+    modOnly: true,
     execute(message, client) {
 
         message.channel.send({embed: {
