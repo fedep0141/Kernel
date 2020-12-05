@@ -5,6 +5,7 @@ module.exports = {
     name: "scarponi",
     description: "Non te ne pentirai",
     whatDo: "You won't regret this",
+    modOnly = false,
     execute(message) {
         let search = "vintage boots";
     
@@ -41,7 +42,7 @@ function image(message, options) {
         let index = Math.floor(Math.random() * urls.length);
     
         message.channel.send({embed: {
-            color: "#593110",
+            color: "#ffb400",
             description: "Scarp",
             image: {
                 url: urls[index]

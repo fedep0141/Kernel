@@ -2,13 +2,14 @@ module.exports = {
     name: "pat",
     description: "@user: pat someone",
     whatDo: "Pat the mention",
+    modOnly = false,
     execute(message) {
         let menzione = message.mentions.members.first();
 
         if(menzione) {
             if(menzione.user.username == message.author.username) {
                 message.channel.send({embed: {
-                    color: "#700d75",
+                    color: "#ffb400",
                     description: "Damn",
                     image: {
                         url: "https://i.kym-cdn.com/entries/icons/original/000/030/329/cover1.jpg"
@@ -21,7 +22,7 @@ module.exports = {
                 });
             } else {
                 message.channel.send({embed: {
-                    color: "#700d75",
+                    color: "#ffb400",
                     fields: [{
                         name: "Pat pat",
                         value: "**" + menzione.user.username + "**"

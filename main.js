@@ -11,6 +11,14 @@ for(let file of COMMANDFILES) {
 
 client.on("ready", () => {
     console.log("KernelBot is online");
+    const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
+    const embed = new Discord.RichEmbed()
+    .setTitle("RULES")
+    .setURL("https://pngimg.com/uploads/shrek/shrek_PNG3.png")
+    .setColor("#ffb400")
+    .setDescription("Follow the rules or **PEW PEW PEW**\n\nsodmsdmmsd\nsmdsdkm\n\n\nsodkmsdms")
+    .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
+    channel.send(embed);
 });
 
 client.on("message", message => {
@@ -60,6 +68,14 @@ client.on("message", message => {
             case "ping":
                 client.commands.get("ping").execute(message, client);
                 break;
+
+            case "modhelp":
+                client.commands.get("modhelp").execute(message, PREFIX, client.commands);
+                break;
+            
+            // case "embed":
+            //     client.commands.get("embed").execute(message);
+            //     break;
         }
     }
 });

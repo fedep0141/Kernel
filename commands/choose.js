@@ -2,11 +2,12 @@ module.exports = {
     name: "choose",
     description: "option1 option2 ...",
     whatDo: "Choose between options",
+    modOnly = false,
     execute(message, args) {
         let index = Math.floor(Math.random() * args.length);
 
         message.channel.send({embed: {
-            color: "#f0cf29",
+            color: "#ffb400",
             fields: [{
                 name: "I choose",
                 value: args[index]

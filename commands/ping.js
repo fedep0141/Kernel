@@ -2,10 +2,11 @@ module.exports = {
     name: "ping",
     description: "Ping command",
     whatDo: "Ping the bot",
+    modOnly = true,
     execute(message, client) {
 
         message.channel.send({embed: {
-            color: "#f0cf29",
+            color: "#ffb400",
             description: "Show bot ping",
             fields: [{
                 name: "Ping",
