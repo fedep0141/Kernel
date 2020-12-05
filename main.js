@@ -34,23 +34,23 @@ client.on("message", message => {
         case "aiut":
         case "help":
             client.commands.get("help").execute(message, PREFIX, client.commands);
-            break;
+            return;
 
         case "ban":
             client.commands.get("ban").execute(message);
-            break;
+            return;
         
         case "pat":
             client.commands.get("pat").execute(message);
-            break;
+            return;
 
         case "scarponi":
             client.commands.get("scarponi").execute(message);
-            break;
+            return;
 
         case "choose":
             client.commands.get("choose").execute(message, args);
-            break
+            return;
     }
 
     if(message.channel.name != MODCHANNEL) {
