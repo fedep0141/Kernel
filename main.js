@@ -58,7 +58,7 @@ client.on("message", message => {
             .setTitle("RULES")
             .setColor("#ffb400")
             .setDescription(`Follow the rules or **PEW PEW PEW**\n\n\n ${li} @Bru and @Pyguz. are the **OWNERS** \n -consider them as gods\n\n \:li: If you want to joke that's fine but **stop** means **stops**`)
-            .addField(bru.toString(), "@Bru and @Pyguz")
+            .addField(bru, "@Bru and @Pyguz")
             .addField()
             .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
             channel.send(embed);
