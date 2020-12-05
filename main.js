@@ -50,20 +50,20 @@ client.on("message", message => {
 
         case "choose":
             client.commands.get("choose").execute(message, args);
-            const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
-            const li = message.guild.emojis.cache.find(emoji => emoji.name == 'li').toString();
+            // const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
+            // const li = message.guild.emojis.cache.find(emoji => emoji.name == 'li').toString();
     
-            const embed = new Discord.MessageEmbed()
-            .setTitle("RULES")
-            .setColor("#ffb400")
-            .setDescription("Follow the rules or you will get **spanked**")
-            .addField("Bru and Pyguz. are the **OWNERS**", li + " consider them as gods")
-            .addField("Jokes", li + " if you want to joke that's fine but **stop** means **stop**")
-            .addField("Channels", li + " use the channels for their correct purpose")
-            .addField("Spam", li + " just don't do it, noone cares about your TikTok profile")
-            .addField("Chill dude", li + " don't take everything too seriusly. Except for the rules you dumbass")
-            .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
-            channel.send(embed);
+            // const embed = new Discord.MessageEmbed()
+            // .setTitle("RULES")
+            // .setColor("#ffb400")
+            // .setDescription("Follow the rules or you will get **spanked**\n")
+            // .addField("Bru and Pyguz. are the **OWNERS**", li + " consider them as gods")
+            // .addField("Jokes", li + " if you want to joke that's fine but **stop** means **stop**")
+            // .addField("Channels", li + " use the channels for their correct purpose")
+            // .addField("Spam", li + " just don't do it, noone cares about your TikTok profile")
+            // .addField("Chill dude", li + " don't take everything too seriusly. Except for the rules you dumbass")
+            // .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
+            // channel.send(embed);
             return;
     }
 
