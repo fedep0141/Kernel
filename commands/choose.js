@@ -6,6 +6,7 @@ module.exports = {
     execute(message, args) {
         let index = Math.floor(Math.random() * args.length);
 
+        console.log(args);
         message.channel.send({embed: {
             color: "#ffb400",
             fields: [{
