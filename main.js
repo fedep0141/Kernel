@@ -66,24 +66,25 @@ client.on("message", message => {
             // .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
             // channel.send(embed);
             return;
-    }
-
-    if(message.channel.name != MODCHANNEL) {
-        message.channel.send("You can't use this command");
-    } else {
-        switch (command) {
-            case "ping":
+        case "ping":
+            if(message.channel.name == MODCHANNEL) {
                 client.commands.get("ping").execute(message, client);
-                break;
+            } else {
+                message.channel.send("You can't use this command");
+            }
+            break;
 
-            case "modhelp":
+        case "modhelp":
+            if(message.channel.name == MODCHANNEL) {
                 client.commands.get("modhelp").execute(message, PREFIX, client.commands);
-                break;
+                } else {
+                    message.channel.send("You can't use this command");
+                }
+            break;
             
-            // case "embed":
-            //     client.commands.get("embed").execute(message);
-            //     break;
-        }
+        // case "embed":
+        //     client.commands.get("embed").execute(message);
+        //     break;
     }
 });
 
