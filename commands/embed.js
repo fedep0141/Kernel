@@ -1,9 +1,9 @@
-// module.exports = {
-//     name: "embed",
-//     description: "sos",
-//     whatDo: "Send an embed message",
-//     modOnly = true,
-//     execute(message, args) {
+module.exports = {
+    name: "embed",
+    description: "sos",
+    whatDo: "Send an embed message",
+    modOnly = true,
+    execute(message, args) {
 //         const channel = message.guild.channels.cache.find(channel => channel.name === args[0]);
 
 
@@ -22,10 +22,10 @@
 //         }
 //         });
 //     }
-// }
+}
 
 // function getInput() {
 //     message.channel.fetchMessages({ limit : 1 }).then(messages => {
 //         return messages.first();
 //     });
-// }
+}
