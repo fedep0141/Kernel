@@ -2,7 +2,7 @@ module.exports = {
     name: "embed",
     description: "sos",
     whatDo: "Send an embed message",
-    modOnly = true,
+    modOnly: true,
     execute(message, args) {
 //         const channel = message.guild.channels.cache.find(channel => channel.name === args[0]);
 
