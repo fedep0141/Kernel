@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const roleClaim = require("./utils/reactionRoles.js");
+const roleClaim = require("./reactionRoles/reactionRoles.js");
 const FS = require("fs");
 require('dotenv').config();
 

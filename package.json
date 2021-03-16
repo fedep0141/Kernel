@@ -17,12 +17,13 @@
   },
   "homepage": "https://github.com/fedep0141/Kernel#readme",
   "dependencies": {
+    "@34r7h/google-translate-api": "^4.0.0",
+    "@vitalets/google-translate-api": "^5.1.0",
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "request": "^2.88.2",
-    "translate": "^0.7.0",
     "unscramble": "^0.0.1-v"
   }
 }
