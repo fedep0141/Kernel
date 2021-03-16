@@ -1,7 +1,7 @@
 module.exports = {
     name: "pat",
-    description: "@user: pat someone",
-    whatDo: "Pat the mention",
+    description: "Pat the mention",
+    usage: "<@user>",
     modOnly: false,
     execute(message) {
         let menzione = message.mentions.members.first();

@@ -3,8 +3,7 @@ const request = require("request");
 
 module.exports = {
     name: "scarponi",
-    description: "Non te ne pentirai",
-    whatDo: "You won't regret this",
+    description: "You won't regret this",
     modOnly: false,
     execute(message) {
         let search = "vintage boots";

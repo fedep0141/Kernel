@@ -1,7 +1,7 @@
 module.exports = {
     name: "choose",
-    description: "option1 option2 ...",
-    whatDo: "Choose between options",
+    description: "Choose between options",
+    usage: "<choice1> <choice2> <choice3> ...",
     modOnly: false,
     execute(message, args) {
         let index = Math.floor(Math.random() * args.length);

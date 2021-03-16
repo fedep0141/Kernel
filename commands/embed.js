@@ -1,9 +1,9 @@
 module.exports = {
     name: "embed",
-    description: "sos",
-    whatDo: "Send an embed message",
+    description: "Send an embed message",
+    usage: "<>",
     modOnly: true,
-    execute(message, args) {
+    execute(message, args, PREFIX, client) {
 //         const channel = message.guild.channels.cache.find(channel => channel.name === args[0]);
 
 

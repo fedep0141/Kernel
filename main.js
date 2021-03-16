@@ -1,5 +1,7 @@
 const Discord = require("discord.js");
+const roleClaim = require("./utils/reactionRoles.js");
 const FS = require("fs");
+require('dotenv').config();
 
 const client = new Discord.Client();
 client.commands = new Discord.Collection();
@@ -11,6 +13,7 @@ for(let file of COMMANDFILES) {
 
 client.on("ready", () => {
     console.log("KernelBot is online");
+    roleClaim(client);
 });
 
 client.on("message", message => {
@@ -28,64 +31,21 @@ client.on("message", message => {
     if(message.author.bot) return;
 
     let args = message.content.slice(PREFIX.length).split(/ +/);
-    const command = args.shift().toLowerCase();
+    const commandName = args.shift().toLowerCase();
 
-    //Global command
-    switch (command) {
-        case "aiut":
-        case "help":
-            client.commands.get("help").execute(message, PREFIX, client.commands);
-            return;
-
-        case "ban":
-            client.commands.get("ban").execute(message);
-            return;
-        
-        case "pat":
-            client.commands.get("pat").execute(message);
-            return;
-
-        case "scarponi":
-            client.commands.get("scarponi").execute(message);
-            return;
-
-        case "choose":
-            client.commands.get("choose").execute(message, args);
-            // const channel = message.guild.channels.cache.find(channel => channel.name === "rules");
-            // const li = message.guild.emojis.cache.find(emoji => emoji.name == 'li').toString();
-    
-            // const embed = new Discord.MessageEmbed()
-            // .setTitle("RULES")
-            // .setColor("#ffb400")
-            // .setDescription("Follow the rules or you will get **spanked**\n")
-            // .addField("Bru and Pyguz. are the **OWNERS**", li + " consider them as gods")
-            // .addField("Jokes", li + " if you want to joke that's fine but **stop** means **stop**")
-            // .addField("Channels", li + " use the channels for their correct purpose")
-            // .addField("Spam", li + " just don't do it, noone cares about your TikTok profile")
-            // .addField("Chill dude", li + " don't take everything too seriusly. Except for the rules you dumbass")
-            // .setFooter("by KERNEL administration", "https://pngimg.com/uploads/shrek/shrek_PNG3.png");
-            // channel.send(embed);
-            return;
-        case "ping":
+    try {
+        var command = client.commands.get(commandName);
+        if(command.modOnly) {
             if(message.channel.name == MODCHANNEL) {
-                client.commands.get("ping").execute(message, client);
-            } else {
-                message.channel.send("You can't use this command");
+                command.execute(message, args, PREFIX, client.commands, client);
             }
-            break;
-
-        case "modhelp":
-            if(message.channel.name == MODCHANNEL) {
-                client.commands.get("modhelp").execute(message, PREFIX, client.commands);
-                } else {
-                    message.channel.send("You can't use this command");
-                }
-            break;
-            
-        // case "embed":
-        //     client.commands.get("embed").execute(message);
-        //     break;
+        } else {
+            command.execute(message, args, PREFIX, client.commands, client);
+        }
+    } catch(error) {
+        if(command != undefined && command.usage) {
+            message.channel.send(PREFIX + commandName + " " + command.usage);
+        }
     }
 });
-
-client.login(process.env.TOKEN);
+client.login(process.env.KERNEL_TOKEN);
