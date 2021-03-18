@@ -33,7 +33,7 @@ client.on("message", message => {
     let args = message.content.slice(PREFIX.length).split(/ +/);
     const commandName = args.shift().toLowerCase();
 
-    try {
+    // try {
         var command = client.commands.get(commandName);
         if(command.modOnly) {
             if(message.channel.name == MODCHANNEL) {
@@ -42,10 +42,10 @@ client.on("message", message => {
         } else {
             command.execute(message, args, PREFIX, client.commands, client);
         }
-    } catch(error) {
-        if(command != undefined && command.usage) {
-            message.channel.send(PREFIX + commandName + " " + command.usage);
-        }
-    }
+    // } catch(error) {
+    //     if(command != undefined && command.usage) {
+    //         message.channel.send(PREFIX + commandName + " " + command.usage);
+    //     }
+    // }
 });
 client.login(process.env.KERNEL_TOKEN);
