@@ -22,7 +22,7 @@ module.exports = {
             args = args.join(" ");
     
             const voices = FS.readdirSync("./voices/").filter(file => file.endsWith(args + ".mp3") || file.endsWith(args + ".m4a"));
-            if(voices.length != 0) {
+            if(voices.length != 0 && args.length) {
                 if(voiceChannel != null) {
                     voiceChannel.join().then(connection => {
                         let dispatcher = connection.play(require("path").join(__dirname, "../voices/" + voices));
