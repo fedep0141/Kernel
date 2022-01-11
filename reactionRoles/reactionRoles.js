@@ -40,7 +40,7 @@ module.exports = (client) => {
         const member = guild.members.cache.find((member) => member.id === user.id);
 
         if(add) {
-            if(!member.roles.cache.some(role => role.name === "Owner" || role.name === "Adminchia")) {
+            if(!member.roles.cache.some(role => role.name === "Owner" || role.name === "Adminchia" || role.name === "Moderatroie" || role.name === "Feccia")) {
                 member.roles.add(role);
                 if(!member.roles.cache.some(role => role.name === "Verified")) {
                     member.roles.add(verified);
