@@ -10,6 +10,11 @@ for(let file of COMMANDFILES) {
     let command = require("./commands/" + file);
     client.commands.set(command.name, command)
 }
+const MUSICFILES = FS.readdirSync("./commands/music/").filter(file => file.endsWith(".js"));
+for(let file of MUSICFILES) {
+    let command = require("./commands/music/" + file);
+    client.commands.set(command.name, command)
+}
 
 client.on("ready", () => {
     console.log("KernelBot is online");
@@ -43,6 +48,7 @@ client.on("message", message => {
             command.execute(message, args, PREFIX, client.commands, client);
         }
     } catch(error) {
+        console.log(error)
         if(command != undefined && command.usage) {
             message.channel.send(PREFIX + commandName + " " + command.usage);
         }

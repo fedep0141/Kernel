@@ -27,6 +27,9 @@
     "ffmpeg-static": "^4.2.8",
     "fs": "0.0.1-security",
     "request": "^2.88.2",
-    "unscramble": "^0.0.1-v"
+    "unscramble": "^0.0.1-v",
+    "yt-search": "^2.10.3",
+    "ytdl": "^1.4.1",
+    "ytdl-core": "^4.11.0"
   }
 }
