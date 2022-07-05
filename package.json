@@ -18,7 +18,7 @@
   "homepage": "https://github.com/fedep0141/Kernel#readme",
   "dependencies": {
     "@34r7h/google-translate-api": "^4.0.0",
-    "@discordjs/opus": "^0.4.0",
+    "@discordjs/opus": "^0.8.0",
     "@vitalets/google-translate-api": "^5.1.0",
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^12.5.1",
