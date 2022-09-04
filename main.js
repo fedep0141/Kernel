@@ -1,24 +1,38 @@
 const Discord = require("discord.js");
+const { Client, GatewayIntentBits } = require('discord.js');
 const roleClaim = require("./reactionRoles/reactionRoles.js");
 const FS = require("fs");
 require('dotenv').config();
 
-const client = new Discord.Client();
+const client = new Discord.Client({ 
+	intents: [
+		GatewayIntentBits.Guilds,
+		GatewayIntentBits.GuildInvites,
+		GatewayIntentBits.GuildMembers,
+		GatewayIntentBits.GuildMessageReactions,
+		GatewayIntentBits.GuildMessageTyping,
+		GatewayIntentBits.GuildMessages,
+		GatewayIntentBits.GuildPresences,
+		GatewayIntentBits.MessageContent
+	] 
+})
+
 client.commands = new Discord.Collection();
 const COMMANDFILES = FS.readdirSync("./commands/").filter(file => file.endsWith(".js"));
 for(let file of COMMANDFILES) {
     let command = require("./commands/" + file);
     client.commands.set(command.name, command)
 }
-const MUSICFILES = FS.readdirSync("./commands/music/").filter(file => file.endsWith(".js"));
-for(let file of MUSICFILES) {
-    let command = require("./commands/music/" + file);
-    client.commands.set(command.name, command)
-}
 
 client.on("ready", () => {
     console.log("KernelBot is online");
+    
     roleClaim(client);
+});
+
+client.on("guildMemberAdd", () => {
+    let counter = client.guilds.cache.get("493128205952221204").memberCount;
+    client.channels.cache.get("1016072558019354744").setName("Members: " + counter);
 });
 
 client.on("message", message => {

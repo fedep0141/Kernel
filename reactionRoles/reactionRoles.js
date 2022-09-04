@@ -47,7 +47,9 @@ module.exports = (client) => {
                 }
             }
         } else {
-            member.roles.remove(role);
+        	if(role.name != "Verified") member.roles.remove(role);
         }
+        
+        if(member.roles.cache.some(role => role.name === "Feccia")) member.roles.remove(verified);
     }
 }
