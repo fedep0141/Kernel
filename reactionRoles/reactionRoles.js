@@ -6,8 +6,8 @@ module.exports = async (client) => {
     const games = require("./gamesRoles.json");
     const gamesReactions = [];
     let gamesText = "Click on the reaction to get the corresponding role\n\n";
-    let hobbiesText = "";
-    let epithetsText = "";
+    let hobbiesText = "\n";
+    let epithetsText = "\n";
     for(let key in games) {
         let emoji = getEmoji(key);
         gamesReactions.push(emoji);
