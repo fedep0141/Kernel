@@ -1,5 +1,5 @@
 const translate = require('@vitalets/google-translate-api');
-const langs = require("../utils/langs.json");
+const langs = require("../../utils/langs.json");
 const Discord = require("discord.js");
 
 module.exports = {
