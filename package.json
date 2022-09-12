@@ -27,6 +27,7 @@
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^5.0.0",
     "fs": "0.0.1-security",
+    "node-schedule": "^2.1.0",
     "request": "^2.88.2",
     "unscramble": "^0.0.1-v",
     "yt-search": "^2.10.3",
