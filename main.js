@@ -38,7 +38,7 @@ schedule.scheduleJob(rule, function () {
         .setTitle("BUONGIORNO")
         .setFooter({ text: "by Pyguz.#0456", iconURL: "https://cdn.discordapp.com/avatars/484387014725206016/4113368f74bd7056a02b20b03b2995a3.png" })
 
-    client.channels.cache.get("1016099553843347607").send({ embeds: [embed] })
+    client.channels.cache.get("703287991761633392").send({ embeds: [embed] })
 });
 
 client.commands = new Collection();
