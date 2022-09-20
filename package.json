@@ -21,6 +21,7 @@
     "@discordjs/opus": "^0.8.0",
     "@discordjs/voice": "^0.10.0",
     "@vitalets/google-translate-api": "^8.0.0",
+    "canvas": "^2.10.1",
     "cheerio": "^1.0.0-rc.11",
     "discord.js": "^14.2.0",
     "dotenv": "^16.0.1",

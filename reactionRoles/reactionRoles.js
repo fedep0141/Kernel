@@ -60,18 +60,10 @@ module.exports = async (client) => {
         if(!roleName) return;
 
         const role = guild.roles.cache.find(role => role.name === roleName);
-        const epithetsRole = guild.roles.cache.find(role => role.id === "1016107530843340851");
-        const privateRole = guild.roles.cache.find(role => role.id === "1016331738210893844");
-        const interestsRole = guild.roles.cache.find(role => role.id === "1016341544325881888");
-        const gamesRole = guild.roles.cache.find(role => role.id === "1016104857515597995");
         const member = guild.members.cache.find((member) => member.id === user.id);
 
         if(add) {
             if(!member.roles.cache.some(role => role.name === "Owner")) {
-                member.roles.add(epithetsRole);
-                member.roles.add(privateRole);
-                member.roles.add(interestsRole);
-                member.roles.add(gamesRole);
                 member.roles.add(role);
             }
         } else {
