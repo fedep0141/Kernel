@@ -203,7 +203,7 @@ client.on('interactionCreate', async (interaction) => {
 
 client.on("guildMemberAdd", async (member) => {
     let counter = client.guilds.cache.get("493128205952221204").memberCount;
-    client.channels.cache.get("1016072558019354744").setName("Members: " + counter);
+    client.channels.cache.get("1016072558019354744").setName("𝗠𝗘𝗠𝗕𝗘𝗥𝗦「 " + counter + " 」");
 
     const { createCanvas, loadImage, registerFont } = require("canvas");
     registerFont("./fonts/Ubuntu-Regular.ttf", { family: "ubuntu" });
@@ -283,7 +283,7 @@ client.on("guildMemberAdd", async (member) => {
     ctx.fillText("Welcome!", text_x_pos_left, (canvas.height / 4) * 1);
 
     // User tag
-    ctx.font = "120px ubuntuBold";
+    ctx.font = "100px ubuntuBold";
     ctx.fillText(
         member.user.tag.slice(0, 20),
         text_x_pos_left,
