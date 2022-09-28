@@ -315,7 +315,7 @@ client.on("guildMemberAdd", async (member) => {
 
 client.on("guildMemberRemove", () => {
     let counter = client.guilds.cache.get("493128205952221204").memberCount;
-    client.channels.cache.get("1016072558019354744").setName("Members: " + counter);
+    client.channels.cache.get("1016072558019354744").setName("𝗠𝗘𝗠𝗕𝗘𝗥𝗦「 " + counter + " 」");
 });
 
 // client.on("message", message => {

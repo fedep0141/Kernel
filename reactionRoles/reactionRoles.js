@@ -5,15 +5,15 @@ module.exports = async (client) => {
 
     const games = require("./gamesRoles.json");
     const gamesReactions = [];
-    let gamesText = "Click on the reaction to get the corresponding role\n\n";
-    let hobbiesText = "\u200B\n";
-    let epithetsText = "\u200B\n";
+    let gamesText = "\u200B\n\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009୨⎯ 𝗚𝗔𝗠𝗘𝗦 𝗥𝗢𝗟𝗘𝗦 ⎯୧\n";
+    let hobbiesText = "\u200B\n\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009୨⎯ 𝗜𝗡𝗧𝗘𝗥𝗘𝗦𝗧𝗦 𝗥𝗢𝗟𝗘𝗦 ⎯୧\n";
+    let epithetsText = "\u200B\n\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009\u0009୨⎯ 𝗛𝗘𝗣𝗜𝗧𝗛𝗘𝗧𝗦 𝗥𝗢𝗟𝗘𝗦 ⎯୧\n";
     for(let key in games) {
         let emoji = getEmoji(key);
         gamesReactions.push(emoji);
 
         let roleID = client.guilds.cache.get("493128205952221204").roles.cache.find(role => role.name === games[key]);
-        gamesText += `${emoji} - ${roleID}\n`;
+        gamesText += `${emoji} ➔ ${encode(games[key])}\n`;
     }    
     const hobbies = require("./hobbiesRoles.json");
     const hobbiesReactions = [];
@@ -22,7 +22,7 @@ module.exports = async (client) => {
         hobbiesReactions.push(emoji);
 
         let roleID = client.guilds.cache.get("493128205952221204").roles.cache.find(role => role.name === hobbies[key]);
-        hobbiesText += `${emoji} - ${roleID}\n`;
+        hobbiesText += `${emoji} ➔ ${encode(hobbies[key])}\n`;
     }    
     const epithets = require("./epithetsRoles.json");
     const epithetsReactions = [];
@@ -31,7 +31,7 @@ module.exports = async (client) => {
         epithetsReactions.push(emoji);
 
         let roleID = client.guilds.cache.get("493128205952221204").roles.cache.find(role => role.name === epithets[key]);
-        epithetsText += `${emoji} - ${roleID}\n`;
+        epithetsText += `${emoji} ➔ ${encode(epithets[key])}\n`;
     }
 
     await firstmessage(client, channelID, gamesText, gamesReactions, 1);
@@ -72,4 +72,14 @@ module.exports = async (client) => {
         
         // if(member.roles.cache.some(role => role.name === "Feccia")) member.roles.remove(verified);
     }
+}
+
+function encode(text) {
+    dict = require("../utils/fontDict.json")
+    let stringArr = text.split("")
+    let encoded = "";
+    stringArr.forEach(char => {
+        encoded += dict[char]
+    });
+    return encoded
 }
