@@ -262,9 +262,10 @@ client.on("guildMemberAdd", async (member) => {
         false
     );
     ctx.clip();
-    const avatar_image = await loadImage(
-        `https://cdn.discordapp.com/avatars/${member.user.id}/${member.user.avatar}.png`
-    );
+    const avatar_image = await loadImage(member.user.displayAvatarURL({ extension: 'png' }));
+    // const avatar_image = await loadImage(
+    //     `https://cdn.discordapp.com/avatars/${member.user.id}/${member.user.avatar}.png`
+    // );
     ctx.drawImage(
         avatar_image,
         bg_cover_padding + avatar_padding,
