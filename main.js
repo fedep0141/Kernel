@@ -182,7 +182,9 @@ client.on('interactionCreate', async (interaction) => {
             interaction.member.roles.add(gamesRole);
             interaction.guild.roles.fetch(verifiedID)
                 .then(role => interaction.member.roles.add(role))
-            interaction.reply({ content: "You got verified", ephemeral: true });
+            await interaction.deferReply({ ephemeral: true });
+            await wait(4000);
+            await interaction.editReply({ content: "You got verified" });
         }
     }
     if (!interaction.isCommand()) return
