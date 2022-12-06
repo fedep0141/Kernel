@@ -1,38 +1,19 @@
 {
   "name": "kernel",
-  "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "version": "2.0.0",
+  "description": "Discord Bot for my Kernel server",
+  "main": "src/bot.js",
   "scripts": {
     "start": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fedep0141/Kernel.git"
-  },
-  "author": "",
+  "keywords": [],
+  "author": "Pyguz.#0456",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/fedep0141/Kernel/issues"
-  },
-  "homepage": "https://github.com/fedep0141/Kernel#readme",
   "dependencies": {
-    "@34r7h/google-translate-api": "^4.0.0",
-    "@discordjs/opus": "^0.8.0",
-    "@discordjs/voice": "^0.10.0",
-    "@vitalets/google-translate-api": "^8.0.0",
-    "canvas": "^2.10.1",
-    "cheerio": "^1.0.0-rc.11",
-    "discord.js": "^14.2.0",
-    "dotenv": "^16.0.1",
-    "ffmpeg": "^0.0.4",
-    "ffmpeg-static": "^5.0.0",
-    "fs": "0.0.1-security",
+    "canvas": "^2.10.2",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
     "node-schedule": "^2.1.0",
-    "request": "^2.88.2",
-    "unscramble": "^0.0.1-v",
-    "yt-search": "^2.10.3",
-    "ytdl": "^1.4.1",
-    "ytdl-core": "^4.11.0"
+    "unscramble": "^0.0.1-v"
   }
 }

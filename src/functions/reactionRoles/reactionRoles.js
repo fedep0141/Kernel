@@ -75,7 +75,7 @@ module.exports = async (client) => {
 }
 
 function encode(text) {
-    dict = require("../utils/fontDict.json")
+    dict = require("../../utils/fontDict.json")
     let stringArr = text.split("")
     let encoded = "";
     stringArr.forEach(char => {
