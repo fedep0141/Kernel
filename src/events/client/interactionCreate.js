@@ -13,7 +13,9 @@ module.exports = {
                 for (const role in verifiedRoles) {
                     await interaction.member.roles.add(verifiedRoles[role])
                 }
-                interaction.reply({ content: "You got verified", ephemeral: true })
+                await interaction.deferReply({ ephemeral: true });
+                await wait(4000);
+                await interaction.editReply({ content: "You got verified" });
             }
         }
         if (!interaction.isCommand()) return
