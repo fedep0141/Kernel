@@ -13,7 +13,7 @@ module.exports = {
                 for (const role in verifiedRoles) {
                     await interaction.member.roles.add(verifiedRoles[role])
                 }
-                interaction.reply({ content: "You got verified", ephemeral: true })
+                await interaction.reply({ content: "You got verified", ephemeral: true })
             }
         }
         if (!interaction.isCommand()) return
